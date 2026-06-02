@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: bronze
+    schema: bronze
+    tables:
+      - name: raw_activity_history
+        description: "Append-only table of raw bulk PGCR payloads."

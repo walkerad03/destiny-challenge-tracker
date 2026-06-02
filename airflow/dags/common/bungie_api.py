@@ -13,7 +13,6 @@ def fetch_character_activity_history(
     api_key: str,
     staging_dir: str = "/tmp/bronze_staging",
 ) -> List[str]:
-
     base_url = "https://www.bungie.net/Platform"
     headers = {"X-API-Key": api_key}
 
@@ -22,7 +21,7 @@ def fetch_character_activity_history(
 
     saved_files: List[str] = []
     page = 0
-    count = 50
+    count = 250
     mode = "raid"
 
     while True:
@@ -52,6 +51,6 @@ def fetch_character_activity_history(
 
         page += 1
 
-        time.sleep(0.25)
+        time.sleep(0.1)
 
     return saved_files

@@ -1,0 +1,533 @@
+==================== 2026-06-02T15:01:15.152311Z | 019e88da-66f0-7292-9def-ef5f9b03a4f6 ====================
+15:01:15.156936 [info ]: dbt-core 2.0.0-alpha.1
+15:01:15.167279 [info ]: Started loading project
+15:01:15.170350 [info ]: Finished loading project [  0.00s]
+15:01:15.171521 [error]: [IoError (dbt1001)]: Cannot open file /opt/airflow/dbt_transform/dbt_project.yml: Failed to open file: /opt/airflow/dbt_transform/dbt_project.yml: No such file or directory (os error 2): No such file or directory (os error 2)
+15:01:15.634215 [info ]: 
+==================== Execution Summary =====================
+Finished 'run' with 1 error [481ms]
+==================== 2026-06-02T15:05:51.352467Z | 019e88de-9dc1-7052-ad80-ba6d4ae3780e ====================
+15:05:51.372186 [info ]: dbt-core 2.0.0-alpha.1
+15:05:51.395378 [info ]: Started loading project
+15:05:51.426709 [info ]: Loading profiles.yml
+15:05:51.443898 [info ]: Finished loading project [  0.05s]
+15:05:51.445074 [error]: [InvalidConfig (dbt1005)]: The 'postgres' adapter is not yet supported by dbt Fusion. Supported adapters: snowflake, bigquery, databricks, redshift
+15:05:51.996420 [info ]: 
+==================== Execution Summary =====================
+Finished 'run' with 1 error [643ms]
+==================== 2026-06-02T15:10:51.654027Z | 019e88e3-32fb-7592-b982-15de9a36308a ====================
+15:10:51.654124 [info ]: dbt-core 2.0.0-alpha.1
+15:10:51.654333 [info ]: Started loading project
+15:10:51.656876 [info ]: Loading profiles.yml
+15:10:51.658195 [info ]: Finished loading project [  0.00s]
+15:10:51.658251 [error]: [InvalidConfig (dbt1005)]: The 'postgres' adapter is not yet supported by dbt Fusion. Supported adapters: snowflake, bigquery, databricks, redshift
+15:10:52.113509 [info ]: 
+==================== Execution Summary =====================
+Finished 'run' with 1 error [459ms]
+==================== 2026-06-02T15:10:52.728480Z | 019e88e3-372f-7b50-b9e4-9831e511d90d ====================
+15:10:52.728575 [info ]: dbt-core 2.0.0-alpha.1
+15:10:52.728776 [info ]: Started loading project
+15:10:52.731100 [info ]: Loading profiles.yml
+15:10:52.732444 [info ]: Finished loading project [  0.00s]
+15:10:52.732503 [error]: [InvalidConfig (dbt1005)]: The 'postgres' adapter is not yet supported by dbt Fusion. Supported adapters: snowflake, bigquery, databricks, redshift
+15:10:52.855593 [info ]: 
+==================== Execution Summary =====================
+Finished 'run' with 1 error [127ms]
+==================== 2026-06-02T15:15:52.876879Z | 019e88e7-cba1-73d0-8b23-13778422828f ====================
+15:15:52.876994 [info ]: dbt-core 2.0.0-alpha.1
+15:15:52.877227 [info ]: Started loading project
+15:15:52.879778 [info ]: Loading profiles.yml
+15:15:52.881294 [info ]: Finished loading project [  0.00s]
+15:15:52.881358 [error]: [InvalidConfig (dbt1005)]: The 'postgres' adapter is not yet supported by dbt Fusion. Supported adapters: snowflake, bigquery, databricks, redshift
+15:15:53.464643 [info ]: 
+==================== Execution Summary =====================
+Finished 'run' with 1 error [587ms]
+[0m15:17:32.299166 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fcbecc434d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fcbef867c50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fcbeb95fd90>]}
+
+
+============================== 15:17:32.341360 | 580e9190-f24c-4ff2-9b65-7c6e0ae1f3c9 ==============================
+[0m15:17:32.341360 [info ] [MainThread]: Running with dbt=1.11.11
+[0m15:17:32.342157 [debug] [MainThread]: running dbt with arguments {'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': '/opt/airflow/dbt_transform/logs', 'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'introspect': 'True', 'invocation_command': 'dbt run --select slv_activity_history --project-dir /opt/airflow/dbt_transform --profiles-dir /opt/airflow/dbt_transform', 'debug': 'False', 'profiles_dir': '/opt/airflow/dbt_transform', 'empty': 'False', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'log_format': 'default', 'target_path': 'None', 'quiet': 'False', 'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'cache_selected_only': 'False', 'static_parser': 'True', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'no_print': 'None'}
+[0m15:17:32.591948 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '580e9190-f24c-4ff2-9b65-7c6e0ae1f3c9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fcbec739940>]}
+[0m15:17:32.663463 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '580e9190-f24c-4ff2-9b65-7c6e0ae1f3c9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fcbeb8d4e20>]}
+[0m15:17:32.664567 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m15:17:32.744014 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m15:17:32.746876 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m15:17:32.747442 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '580e9190-f24c-4ff2-9b65-7c6e0ae1f3c9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fcbeb989c50>]}
+[0m15:17:33.996443 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.destiny_transform.bronze
+[0m15:17:34.007119 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '580e9190-f24c-4ff2-9b65-7c6e0ae1f3c9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fcbeba63b60>]}
+[0m15:17:34.100006 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_transform/target/manifest.json
+[0m15:17:34.105134 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_transform/target/semantic_manifest.json
+[0m15:17:34.117812 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '580e9190-f24c-4ff2-9b65-7c6e0ae1f3c9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fcbea7266d0>]}
+[0m15:17:34.118533 [info ] [MainThread]: Found 1 model, 1 source, 475 macros
+[0m15:17:34.119281 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '580e9190-f24c-4ff2-9b65-7c6e0ae1f3c9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fcbeb524a10>]}
+[0m15:17:34.121478 [info ] [MainThread]: 
+[0m15:17:34.122097 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:17:34.122691 [info ] [MainThread]: 
+[0m15:17:34.123588 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m15:17:34.125103 [debug] [ThreadPool]: Acquiring new postgres connection 'list_airflow'
+[0m15:17:34.179191 [debug] [ThreadPool]: Using postgres connection "list_airflow"
+[0m15:17:34.179968 [debug] [ThreadPool]: On list_airflow: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_transform", "target_name": "dev", "connection_name": "list_airflow"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:17:34.180466 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:17:34.181866 [debug] [ThreadPool]: Postgres adapter: Got a retryable error when attempting to open a postgres connection.
+1 attempts remaining. Retrying in 0 seconds.
+Error:
+connection to server at "postgres" (172.18.0.2), port 5433 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+[0m15:17:34.183024 [debug] [ThreadPool]: Postgres adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_transform", "target_name": "dev", "connection_name": "list_airflow"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:17:34.183636 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m15:17:34.184214 [debug] [ThreadPool]: Postgres adapter: Error running SQL: macro list_schemas
+[0m15:17:34.184701 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m15:17:34.185213 [debug] [ThreadPool]: On list_airflow: No close available on handle
+[0m15:17:34.186302 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:17:34.186767 [debug] [MainThread]: Connection 'list_airflow' was properly closed.
+[0m15:17:34.187250 [info ] [MainThread]: 
+[0m15:17:34.187816 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.06 seconds (0.06s).
+[0m15:17:34.188747 [error] [MainThread]: Encountered an error:
+Database Error
+  connection to server at "postgres" (172.18.0.2), port 5433 failed: Connection refused
+  	Is the server running on that host and accepting TCP/IP connections?
+  
+[0m15:17:34.189931 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 1.9670049, "process_in_blocks": "9944", "process_kernel_time": 0.242454, "process_mem_max_rss": "145116", "process_out_blocks": "4488", "process_user_time": 3.323647}
+[0m15:17:34.190573 [debug] [MainThread]: Command `dbt run` failed at 15:17:34.190459 after 1.97 seconds
+[0m15:17:34.191113 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fcbeba94e90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fcbe9b49e90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fcbe9b49f40>]}
+[0m15:17:34.191659 [debug] [MainThread]: Flushing usage events
+[0m15:17:34.526896 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:21:05.786949 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6edf0b67b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6ee1e52e90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6ede0abd90>]}
+
+
+============================== 15:21:05.790584 | 5b26a861-78fb-48a0-a0db-883ebaac2456 ==============================
+[0m15:21:05.790584 [info ] [MainThread]: Running with dbt=1.11.11
+[0m15:21:05.791388 [debug] [MainThread]: running dbt with arguments {'use_colors': 'True', 'log_path': '/opt/airflow/dbt_transform/logs', 'target_path': 'None', 'profiles_dir': '/opt/airflow/dbt_transform', 'invocation_command': 'dbt run --select slv_activity_history --project-dir /opt/airflow/dbt_transform --profiles-dir /opt/airflow/dbt_transform', 'no_print': 'None', 'log_format': 'default', 'cache_selected_only': 'False', 'write_json': 'True', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_cache_events': 'False', 'quiet': 'False', 'static_parser': 'True', 'introspect': 'True', 'send_anonymous_usage_stats': 'True', 'empty': 'False', 'printer_width': '80', 'partial_parse': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True'}
+[0m15:21:05.986025 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '5b26a861-78fb-48a0-a0db-883ebaac2456', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6eded24b00>]}
+[0m15:21:06.056097 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '5b26a861-78fb-48a0-a0db-883ebaac2456', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6eddf4c490>]}
+[0m15:21:06.057210 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m15:21:06.131830 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m15:21:06.229598 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m15:21:06.230335 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '5b26a861-78fb-48a0-a0db-883ebaac2456', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6eddf9d850>]}
+[0m15:21:07.514518 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.destiny_transform.bronze
+[0m15:21:07.525498 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '5b26a861-78fb-48a0-a0db-883ebaac2456', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6ede056f30>]}
+[0m15:21:07.620150 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_transform/target/manifest.json
+[0m15:21:07.624886 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_transform/target/semantic_manifest.json
+[0m15:21:07.638483 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '5b26a861-78fb-48a0-a0db-883ebaac2456', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6edb309470>]}
+[0m15:21:07.639677 [info ] [MainThread]: Found 1 model, 1 source, 475 macros
+[0m15:21:07.640451 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5b26a861-78fb-48a0-a0db-883ebaac2456', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6edbf6fba0>]}
+[0m15:21:07.642510 [info ] [MainThread]: 
+[0m15:21:07.643210 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:21:07.643803 [info ] [MainThread]: 
+[0m15:21:07.644617 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m15:21:07.646488 [debug] [ThreadPool]: Acquiring new postgres connection 'list_airflow'
+[0m15:21:07.686239 [debug] [ThreadPool]: Using postgres connection "list_airflow"
+[0m15:21:07.687040 [debug] [ThreadPool]: On list_airflow: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_transform", "target_name": "dev", "connection_name": "list_airflow"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:21:07.687594 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:21:07.696375 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.009 seconds
+[0m15:21:07.698334 [debug] [ThreadPool]: On list_airflow: Close
+[0m15:21:07.699704 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_airflow, now create_airflow_silver)
+[0m15:21:07.700706 [debug] [ThreadPool]: Creating schema "database: "airflow"
+schema: "silver"
+"
+[0m15:21:07.707391 [debug] [ThreadPool]: Using postgres connection "create_airflow_silver"
+[0m15:21:07.708036 [debug] [ThreadPool]: On create_airflow_silver: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_transform", "target_name": "dev", "connection_name": "create_airflow_silver"} */
+create schema if not exists "silver"
+[0m15:21:07.708560 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:21:07.715119 [debug] [ThreadPool]: SQL status: CREATE SCHEMA in 0.007 seconds
+[0m15:21:07.716618 [debug] [ThreadPool]: On create_airflow_silver: COMMIT
+[0m15:21:07.717233 [debug] [ThreadPool]: Using postgres connection "create_airflow_silver"
+[0m15:21:07.717747 [debug] [ThreadPool]: On create_airflow_silver: COMMIT
+[0m15:21:07.723034 [debug] [ThreadPool]: SQL status: COMMIT in 0.005 seconds
+[0m15:21:07.723614 [debug] [ThreadPool]: On create_airflow_silver: Close
+[0m15:21:07.725310 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_airflow_silver, now list_airflow_silver)
+[0m15:21:07.731525 [debug] [ThreadPool]: Using postgres connection "list_airflow_silver"
+[0m15:21:07.732138 [debug] [ThreadPool]: On list_airflow_silver: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_transform", "target_name": "dev", "connection_name": "list_airflow_silver"} */
+select
+      'airflow' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'silver'
+    union all
+    select
+      'airflow' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'silver'
+    union all
+    select
+      'airflow' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'silver'
+  
+[0m15:21:07.732710 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:21:07.740819 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.008 seconds
+[0m15:21:07.742687 [debug] [ThreadPool]: On list_airflow_silver: ROLLBACK
+[0m15:21:07.743350 [debug] [ThreadPool]: On list_airflow_silver: Close
+[0m15:21:07.749851 [debug] [MainThread]: Using postgres connection "master"
+[0m15:21:07.750596 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_transform", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m15:21:07.751179 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:21:07.761096 [debug] [MainThread]: SQL status: SELECT 0 in 0.010 seconds
+[0m15:21:07.762931 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5b26a861-78fb-48a0-a0db-883ebaac2456', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6edc31bf50>]}
+[0m15:21:07.763684 [debug] [MainThread]: On master: ROLLBACK
+[0m15:21:07.764476 [debug] [MainThread]: On master: COMMIT
+[0m15:21:07.765092 [debug] [MainThread]: Using postgres connection "master"
+[0m15:21:07.765603 [debug] [MainThread]: On master: COMMIT
+[0m15:21:07.766354 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m15:21:07.766874 [debug] [MainThread]: On master: Close
+[0m15:21:07.772446 [debug] [Thread-1 (]: Began running node model.destiny_transform.slv_activity_history
+[0m15:21:07.773611 [info ] [Thread-1 (]: 1 of 1 START sql incremental model silver.slv_activity_history ................. [RUN]
+[0m15:21:07.774552 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_airflow_silver, now model.destiny_transform.slv_activity_history)
+[0m15:21:07.775307 [debug] [Thread-1 (]: Began compiling node model.destiny_transform.slv_activity_history
+[0m15:21:07.784536 [debug] [Thread-1 (]: Writing injected SQL for node "model.destiny_transform.slv_activity_history"
+[0m15:21:07.803387 [debug] [Thread-1 (]: Began executing node model.destiny_transform.slv_activity_history
+[0m15:21:07.874512 [debug] [Thread-1 (]: Writing runtime sql for node "model.destiny_transform.slv_activity_history"
+[0m15:21:07.895376 [debug] [Thread-1 (]: Using postgres connection "model.destiny_transform.slv_activity_history"
+[0m15:21:07.896104 [debug] [Thread-1 (]: On model.destiny_transform.slv_activity_history: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_transform", "target_name": "dev", "node_id": "model.destiny_transform.slv_activity_history"} */
+
+      
+  
+    
+
+  create  table "airflow"."silver"."slv_activity_history"
+  
+  
+    as
+  
+  (
+    
+
+WITH source_data AS (
+    SELECT
+        account_id,
+        character_id,
+        page_number,
+        jsonb_array_elements(payload -> 'Response' -> 'activities') AS activity,
+        ingested_at
+    FROM "airflow"."bronze"."raw_activity_history"
+
+    
+)
+
+SELECT
+    account_id,
+    character_id,
+
+    (activity -> 'activityDetails' ->> 'instanceId')::BIGINT AS instance_id,
+    (activity -> 'activityDetails' ->> 'directorActivityHash')::BIGINT AS activity_hash,
+    (activity -> 'activityDetails' ->> 'mode')::INT AS activity_mode,
+
+    (activity ->> 'period')::TIMESTAMP AS period_start,
+    (activity -> 'values' -> 'activityDurationSeconds' -> 'basic' ->> 'value')::INT AS duration_seconds,
+
+    (activity -> 'values' -> 'completed' -> 'basic' ->> 'value')::INT AS is_completed,
+    (activity -> 'values' -> 'kills' -> 'basic' ->> 'value')::INT AS kills,
+    (activity -> 'values' -> 'deaths' -> 'basic' ->> 'value')::INT AS deaths,
+    (activity -> 'values' -> 'assists' -> 'basic' ->> 'value')::INT AS assists,
+    (activity -> 'values' -> 'efficiency' -> 'basic' ->> 'value')::FLOAT AS efficiency,
+
+    (activity -> 'values' -> 'team' -> 'basic' ->> 'value')::INT AS team_id,
+    (activity -> 'values' -> 'playerCount' -> 'basic' ->> 'value')::INT AS player_count,
+
+    ingested_at
+
+FROM source_data
+  );
+  
+  
+[0m15:21:07.896752 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:21:07.905851 [debug] [Thread-1 (]: Postgres adapter: Postgres error: invalid input syntax for type integer: "2643.0"
+
+[0m15:21:07.906667 [debug] [Thread-1 (]: On model.destiny_transform.slv_activity_history: ROLLBACK
+[0m15:21:07.907527 [debug] [Thread-1 (]: On model.destiny_transform.slv_activity_history: Close
+[0m15:21:07.913811 [debug] [Thread-1 (]: Database Error in model slv_activity_history (models/silver/slv_activity_history.sql)
+  invalid input syntax for type integer: "2643.0"
+  compiled code at target/run/destiny_transform/models/silver/slv_activity_history.sql
+[0m15:21:07.915889 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5b26a861-78fb-48a0-a0db-883ebaac2456', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6edb7bbcd0>]}
+[0m15:21:07.916839 [error] [Thread-1 (]: 1 of 1 ERROR creating sql incremental model silver.slv_activity_history ........ [[31mERROR[0m in 0.14s]
+[0m15:21:07.917716 [debug] [Thread-1 (]: Finished running node model.destiny_transform.slv_activity_history
+[0m15:21:07.918579 [debug] [Thread-7 (]: Marking all children of 'model.destiny_transform.slv_activity_history' to be skipped because of status 'error'.  Reason: Database Error in model slv_activity_history (models/silver/slv_activity_history.sql)
+  invalid input syntax for type integer: "2643.0"
+  compiled code at target/run/destiny_transform/models/silver/slv_activity_history.sql.
+[0m15:21:07.921469 [debug] [MainThread]: On master: COMMIT
+[0m15:21:07.922066 [debug] [MainThread]: Using postgres connection "master"
+[0m15:21:07.922563 [debug] [MainThread]: On master: COMMIT
+[0m15:21:07.923034 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:21:07.929471 [debug] [MainThread]: SQL status: COMMIT in 0.006 seconds
+[0m15:21:07.930118 [debug] [MainThread]: On master: Close
+[0m15:21:07.930808 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:21:07.931293 [debug] [MainThread]: Connection 'model.destiny_transform.slv_activity_history' was properly closed.
+[0m15:21:07.932038 [info ] [MainThread]: 
+[0m15:21:07.932899 [info ] [MainThread]: Finished running 1 incremental model in 0 hours 0 minutes and 0.29 seconds (0.29s).
+[0m15:21:07.933938 [debug] [MainThread]: Command end result
+[0m15:21:07.979634 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_transform/target/manifest.json
+[0m15:21:07.984530 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_transform/target/semantic_manifest.json
+[0m15:21:07.993857 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt_transform/target/run_results.json
+[0m15:21:07.994536 [info ] [MainThread]: 
+[0m15:21:07.995388 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m15:21:07.996002 [info ] [MainThread]: 
+[0m15:21:07.996624 [error] [MainThread]: [31mFailure in model slv_activity_history (models/silver/slv_activity_history.sql)[0m
+[0m15:21:07.997247 [error] [MainThread]:   Database Error in model slv_activity_history (models/silver/slv_activity_history.sql)
+  invalid input syntax for type integer: "2643.0"
+  compiled code at target/run/destiny_transform/models/silver/slv_activity_history.sql
+[0m15:21:07.997778 [info ] [MainThread]: 
+[0m15:21:07.998437 [info ] [MainThread]:   compiled code at target/compiled/destiny_transform/models/silver/slv_activity_history.sql
+[0m15:21:07.999016 [info ] [MainThread]: 
+[0m15:21:07.999580 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=1
+[0m15:21:08.000776 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 2.2896595, "process_in_blocks": "88", "process_kernel_time": 0.181844, "process_mem_max_rss": "147896", "process_out_blocks": "0", "process_user_time": 3.404528}
+[0m15:21:08.001430 [debug] [MainThread]: Command `dbt run` failed at 15:21:08.001318 after 2.29 seconds
+[0m15:21:08.001995 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6edc340a50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6eda9dacc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6edb7d8050>]}
+[0m15:21:08.002544 [debug] [MainThread]: Flushing usage events
+[0m15:21:08.366327 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:23:57.543082 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa50f3ce7b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa511f4ae90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa50e17bd90>]}
+
+
+============================== 15:23:57.547171 | ab6f1021-3093-4c81-a9c7-e9a77808e580 ==============================
+[0m15:23:57.547171 [info ] [MainThread]: Running with dbt=1.11.11
+[0m15:23:57.548037 [debug] [MainThread]: running dbt with arguments {'debug': 'False', 'indirect_selection': 'eager', 'log_path': '/opt/airflow/dbt_transform/logs', 'log_cache_events': 'False', 'introspect': 'True', 'write_json': 'True', 'no_print': 'None', 'empty': 'False', 'fail_fast': 'False', 'static_parser': 'True', 'log_format': 'default', 'invocation_command': 'dbt run --select slv_activity_history --project-dir /opt/airflow/dbt_transform --profiles-dir /opt/airflow/dbt_transform', 'printer_width': '80', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_experimental_parser': 'False', 'target_path': 'None', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'version_check': 'True', 'use_colors': 'True', 'quiet': 'False', 'cache_selected_only': 'False', 'warn_error': 'None', 'profiles_dir': '/opt/airflow/dbt_transform'}
+[0m15:23:57.744489 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ab6f1021-3093-4c81-a9c7-e9a77808e580', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa50ee30b00>]}
+[0m15:23:57.813228 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ab6f1021-3093-4c81-a9c7-e9a77808e580', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa50e02c490>]}
+[0m15:23:57.814448 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m15:23:57.890694 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m15:23:58.035342 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m15:23:58.036308 [debug] [MainThread]: Partial parsing: updated file: destiny_transform://models/silver/slv_activity_history.sql
+[0m15:23:58.403498 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.destiny_transform.bronze
+[0m15:23:58.419913 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'ab6f1021-3093-4c81-a9c7-e9a77808e580', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa50c748750>]}
+[0m15:23:58.520510 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_transform/target/manifest.json
+[0m15:23:58.526403 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_transform/target/semantic_manifest.json
+[0m15:23:58.540877 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ab6f1021-3093-4c81-a9c7-e9a77808e580', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa50cbed4f0>]}
+[0m15:23:58.541647 [info ] [MainThread]: Found 1 model, 1 source, 475 macros
+[0m15:23:58.542213 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ab6f1021-3093-4c81-a9c7-e9a77808e580', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa50bf410f0>]}
+[0m15:23:58.544149 [info ] [MainThread]: 
+[0m15:23:58.544737 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:23:58.545397 [info ] [MainThread]: 
+[0m15:23:58.546561 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m15:23:58.548664 [debug] [ThreadPool]: Acquiring new postgres connection 'list_airflow'
+[0m15:23:58.590295 [debug] [ThreadPool]: Using postgres connection "list_airflow"
+[0m15:23:58.591054 [debug] [ThreadPool]: On list_airflow: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_transform", "target_name": "dev", "connection_name": "list_airflow"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:23:58.591711 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:23:58.599933 [debug] [ThreadPool]: SQL status: SELECT 6 in 0.008 seconds
+[0m15:23:58.601678 [debug] [ThreadPool]: On list_airflow: Close
+[0m15:23:58.603294 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_airflow, now list_airflow_silver)
+[0m15:23:58.609983 [debug] [ThreadPool]: Using postgres connection "list_airflow_silver"
+[0m15:23:58.610572 [debug] [ThreadPool]: On list_airflow_silver: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_transform", "target_name": "dev", "connection_name": "list_airflow_silver"} */
+select
+      'airflow' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'silver'
+    union all
+    select
+      'airflow' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'silver'
+    union all
+    select
+      'airflow' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'silver'
+  
+[0m15:23:58.611096 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:23:58.619888 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.009 seconds
+[0m15:23:58.621761 [debug] [ThreadPool]: On list_airflow_silver: ROLLBACK
+[0m15:23:58.622450 [debug] [ThreadPool]: On list_airflow_silver: Close
+[0m15:23:58.627469 [debug] [MainThread]: Using postgres connection "master"
+[0m15:23:58.628166 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_transform", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m15:23:58.628738 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:23:58.637434 [debug] [MainThread]: SQL status: SELECT 0 in 0.009 seconds
+[0m15:23:58.639196 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ab6f1021-3093-4c81-a9c7-e9a77808e580', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa50b785cc0>]}
+[0m15:23:58.640003 [debug] [MainThread]: On master: ROLLBACK
+[0m15:23:58.640690 [debug] [MainThread]: On master: COMMIT
+[0m15:23:58.641197 [debug] [MainThread]: Using postgres connection "master"
+[0m15:23:58.641681 [debug] [MainThread]: On master: COMMIT
+[0m15:23:58.642314 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m15:23:58.642799 [debug] [MainThread]: On master: Close
+[0m15:23:58.647739 [debug] [Thread-1 (]: Began running node model.destiny_transform.slv_activity_history
+[0m15:23:58.648516 [info ] [Thread-1 (]: 1 of 1 START sql incremental model silver.slv_activity_history ................. [RUN]
+[0m15:23:58.649245 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_airflow_silver, now model.destiny_transform.slv_activity_history)
+[0m15:23:58.649939 [debug] [Thread-1 (]: Began compiling node model.destiny_transform.slv_activity_history
+[0m15:23:58.660149 [debug] [Thread-1 (]: Writing injected SQL for node "model.destiny_transform.slv_activity_history"
+[0m15:23:58.668055 [debug] [Thread-1 (]: Began executing node model.destiny_transform.slv_activity_history
+[0m15:23:58.733676 [debug] [Thread-1 (]: Writing runtime sql for node "model.destiny_transform.slv_activity_history"
+[0m15:23:58.740028 [debug] [Thread-1 (]: Using postgres connection "model.destiny_transform.slv_activity_history"
+[0m15:23:58.740700 [debug] [Thread-1 (]: On model.destiny_transform.slv_activity_history: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "dbt_transform", "target_name": "dev", "node_id": "model.destiny_transform.slv_activity_history"} */
+
+      
+  
+    
+
+  create  table "airflow"."silver"."slv_activity_history"
+  
+  
+    as
+  
+  (
+    
+
+WITH source_data AS (
+    SELECT
+        account_id,
+        character_id,
+        page_number,
+        jsonb_array_elements(payload -> 'Response' -> 'activities') AS activity,
+        ingested_at
+    FROM "airflow"."bronze"."raw_activity_history"
+
+    
+)
+
+SELECT
+    account_id,
+    character_id,
+
+    (activity -> 'activityDetails' ->> 'instanceId')::BIGINT AS instance_id,
+    (activity -> 'activityDetails' ->> 'directorActivityHash')::BIGINT AS activity_hash,
+    (activity -> 'activityDetails' ->> 'mode')::INT AS activity_mode,
+
+    (activity ->> 'period')::TIMESTAMP AS period_start,
+    (activity -> 'values' -> 'activityDurationSeconds' -> 'basic' ->> 'value')::NUMERIC::INT AS duration_seconds,
+
+    (activity -> 'values' -> 'completed' -> 'basic' ->> 'value')::NUMERIC::INT AS is_completed,
+    (activity -> 'values' -> 'kills' -> 'basic' ->> 'value')::NUMERIC::INT AS kills,
+    (activity -> 'values' -> 'deaths' -> 'basic' ->> 'value')::NUMERIC::INT AS deaths,
+    (activity -> 'values' -> 'assists' -> 'basic' ->> 'value')::NUMERIC::INT AS assists,
+    (activity -> 'values' -> 'efficiency' -> 'basic' ->> 'value')::FLOAT AS efficiency,
+
+    (activity -> 'values' -> 'team' -> 'basic' ->> 'value')::NUMERIC::INT AS team_id,
+    (activity -> 'values' -> 'playerCount' -> 'basic' ->> 'value')::NUMERIC::INT AS player_count,
+
+    ingested_at
+
+FROM source_data
+  );
+  
+  
+[0m15:23:58.741348 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:23:58.753516 [debug] [Thread-1 (]: SQL status: SELECT 648 in 0.012 seconds
+[0m15:23:58.774711 [debug] [Thread-1 (]: On model.destiny_transform.slv_activity_history: COMMIT
+[0m15:23:58.775507 [debug] [Thread-1 (]: Using postgres connection "model.destiny_transform.slv_activity_history"
+[0m15:23:58.776211 [debug] [Thread-1 (]: On model.destiny_transform.slv_activity_history: COMMIT
+[0m15:23:58.785887 [debug] [Thread-1 (]: SQL status: COMMIT in 0.009 seconds
+[0m15:23:58.788372 [debug] [Thread-1 (]: On model.destiny_transform.slv_activity_history: Close
+[0m15:23:58.790736 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'ab6f1021-3093-4c81-a9c7-e9a77808e580', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa50aba4710>]}
+[0m15:23:58.791734 [info ] [Thread-1 (]: 1 of 1 OK created sql incremental model silver.slv_activity_history ............ [[32mSELECT 648[0m in 0.14s]
+[0m15:23:58.792591 [debug] [Thread-1 (]: Finished running node model.destiny_transform.slv_activity_history
+[0m15:23:58.794833 [debug] [MainThread]: On master: COMMIT
+[0m15:23:58.795350 [debug] [MainThread]: Using postgres connection "master"
+[0m15:23:58.795841 [debug] [MainThread]: On master: COMMIT
+[0m15:23:58.796289 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:23:58.802662 [debug] [MainThread]: SQL status: COMMIT in 0.006 seconds
+[0m15:23:58.803305 [debug] [MainThread]: On master: Close
+[0m15:23:58.804004 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:23:58.804509 [debug] [MainThread]: Connection 'model.destiny_transform.slv_activity_history' was properly closed.
+[0m15:23:58.805141 [info ] [MainThread]: 
+[0m15:23:58.805712 [info ] [MainThread]: Finished running 1 incremental model in 0 hours 0 minutes and 0.26 seconds (0.26s).
+[0m15:23:58.806659 [debug] [MainThread]: Command end result
+[0m15:23:58.851473 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt_transform/target/manifest.json
+[0m15:23:58.856599 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt_transform/target/semantic_manifest.json
+[0m15:23:58.866248 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt_transform/target/run_results.json
+[0m15:23:58.866869 [info ] [MainThread]: 
+[0m15:23:58.867480 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:23:58.867989 [info ] [MainThread]: 
+[0m15:23:58.868570 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m15:23:58.869793 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.4004084, "process_in_blocks": "0", "process_kernel_time": 0.170692, "process_mem_max_rss": "146064", "process_out_blocks": "0", "process_user_time": 2.580465}
+[0m15:23:58.870550 [debug] [MainThread]: Command `dbt run` succeeded at 15:23:58.870444 after 1.40 seconds
+[0m15:23:58.871132 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa50cbe7960>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa50ab98230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa50ab9b9d0>]}
+[0m15:23:58.871648 [debug] [MainThread]: Flushing usage events
+[0m15:23:59.204478 [debug] [MainThread]: An error was encountered while trying to flush usage events

@@ -1,0 +1,1 @@
+{"_invocation_id": "ab6f1021-3093-4c81-a9c7-e9a77808e580", "linked": {"0": {"name": "source.destiny_transform.bronze.raw_activity_history", "type": "source", "succ": [1]}, "1": {"name": "model.destiny_transform.slv_activity_history", "type": "model"}}}

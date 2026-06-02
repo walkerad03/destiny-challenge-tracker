@@ -5,10 +5,12 @@ from pathlib import Path
 
 import pendulum
 import psycopg
+from common.bungie_api import fetch_character_activity_history
+
 from airflow.models import Variable
+from airflow.providers.standard.operators.bash import BashOperator
 from airflow.providers.standard.operators.python import PythonOperator
 from airflow.sdk import DAG
-from common.bungie_api import fetch_character_activity_history
 
 DAG_NAME = "destiny_ingestion_pipeline"
 
@@ -65,6 +67,10 @@ def load_data_to_postgres(**context):
                     INSERT INTO bronze.raw_activity_history
                     (account_id, character_id, page_number, payload)
                     VALUES (%s, %s, %s, %s)
+                    ON CONFLICT (account_id, character_id, page_number)
+                    DO UPDATE SET
+                        payload = EXCLUDED.payload,
+                        ingested_at = CURRENT_TIMESTAMP
                     """,
                     (account_id, character_id, page, json.dumps(data)),
                 )
@@ -83,4 +89,15 @@ load_data_task = PythonOperator(
     dag=dag,
 )
 
-pull_data_task >> load_data_task
+run_dbt_silver_task = BashOperator(
+    task_id="run_dbt_silver",
+    bash_command=(
+        "dbt run "
+        "--select slv_activity_history "
+        "--project-dir /opt/airflow/dbt_transform "
+        "--profiles-dir /opt/airflow/dbt_transform"
+    ),
+    dag=dag,
+)
+
+pull_data_task >> load_data_task >> run_dbt_silver_task
