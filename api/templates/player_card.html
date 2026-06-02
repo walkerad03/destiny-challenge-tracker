@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Destiny 2 Activity Tracker</title>
+        <style>
+            body {
+                background-color: #1e1e1e;
+                color: #d4d4d2;
+                font-family: "Courier New", Courier, monospace;
+                padding: 2rem;
+                max-width: 900px;
+                margin: 0 auto;
+            }
+            h1,
+            h2 {
+                color: #ffb000;
+                text-transform: uppercase;
+                border-bottom: 2px solid #ffb000;
+                padding-bottom: 5px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 2rem;
+                background-color: #2a2a2a;
+                border: 1px solid #444;
+            }
+            th,
+            td {
+                border: 1px solid #444;
+                padding: 12px;
+                text-align: center;
+            }
+            th {
+                background-color: #333;
+                color: #ffb000;
+            }
+            td.activity-name {
+                text-align: left;
+                font-weight: bold;
+            }
+            .check-yes {
+                color: #4caf50;
+                font-weight: bold;
+            }
+            .check-no {
+                color: #555;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Tracker Record: {{ discord_id }}</h1>
+
+        <h2>Dungeon Achievements</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Activity Hash</th>
+                    <th>Solo</th>
+                    <th>Solo Flawless</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in dungeons %}
+                <tr>
+                    <td class="activity-name">{{ row.activity_hash }}</td>
+                    <td
+                        class="{% if row.has_solo %}check-yes{% else %}check-no{% endif %}"
+                    >
+                        {% if row.has_solo %}✔{% else %}—{% endif %}
+                    </td>
+                    <td
+                        class="{% if row.has_flawless %}check-yes{% else %}check-no{% endif %}"
+                    >
+                        {% if row.has_flawless %}✔{% else %}—{% endif %}
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="3">No solo dungeon records found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h2>Lowman Raid Achievements</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Activity Hash</th>
+                    <th>4-Man</th>
+                    <th>3-Man (Trio)</th>
+                    <th>2-Man (Duo)</th>
+                    <th>1-Man (Solo)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in raids %}
+                <tr>
+                    <td class="activity-name">{{ row.activity_hash }}</td>
+                    <td
+                        class="{% if row.man_4 %}check-yes{% else %}check-no{% endif %}"
+                    >
+                        {% if row.man_4 %}✔{% else %}—{% endif %}
+                    </td>
+                    <td
+                        class="{% if row.man_3 %}check-yes{% else %}check-no{% endif %}"
+                    >
+                        {% if row.man_3 %}✔{% else %}—{% endif %}
+                    </td>
+                    <td
+                        class="{% if row.man_2 %}check-yes{% else %}check-no{% endif %}"
+                    >
+                        {% if row.man_2 %}✔{% else %}—{% endif %}
+                    </td>
+                    <td
+                        class="{% if row.man_1 %}check-yes{% else %}check-no{% endif %}"
+                    >
+                        {% if row.man_1 %}✔{% else %}—{% endif %}
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="5">No lowman raid records found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>

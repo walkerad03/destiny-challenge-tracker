@@ -5,6 +5,7 @@ from pathlib import Path
 
 import pendulum
 import psycopg
+import requests
 from common.bungie_api import fetch_character_activity_history
 
 from airflow.models import Variable
@@ -23,13 +24,56 @@ dag = DAG(
 )
 
 
-def pull_api_data(**context):
+def build_character_roster(**context):
+    host = os.environ.get("DBT_HOST", "postgres")
+    user = os.environ.get("DBT_USER")
+    password = os.environ.get("DBT_PASSWORD")
+    dbname = os.environ.get("DBT_DBNAME")
+    api_key = Variable.get("secret_bungie_api_key")
+    headers = {"X-API-Key": api_key}
+
+    conn_info = f"host={host} dbname={dbname} user={user} password={password}"
+
+    roster = []
+
+    with psycopg.connect(conn_info) as conn:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT bungie_membership_id, bungie_membership_type FROM config.tracked_users WHERE is_active = TRUE"
+            )
+            users = cur.fetchall()
+
+            for membership_id, membership_type in users:
+                url = f"https://www.bungie.net/Platform/Destiny2/{membership_type}/Profile/{membership_id}/?components=200"
+                resp = requests.get(url, headers=headers)
+                resp.raise_for_status()
+
+                char_data = (
+                    resp.json()
+                    .get("Response", {})
+                    .get("characters", {})
+                    .get("data", {})
+                )
+
+                for char_id in char_data.keys():
+                    roster.append(
+                        {
+                            "membership_type": membership_type,
+                            "account_id": membership_id,
+                            "character_id": char_id,
+                        }
+                    )
+
+    return roster
+
+
+def pull_api_data(membership_type, account_id, character_id, **context):
     api_key = Variable.get("secret_bungie_api_key")
 
     raw_data = fetch_character_activity_history(
-        membership_type=1,
-        account_id="4611686018457944318",
-        character_id="2305843009269336162",
+        membership_type=membership_type,
+        account_id=account_id,
+        character_id=character_id,
         api_key=api_key,
         staging_dir="/opt/airflow/bronze_staging",
     )
@@ -38,11 +82,22 @@ def pull_api_data(**context):
 
 def load_data_to_postgres(**context):
     ti = context["ti"]
-    saved_files = ti.xcom_pull(task_ids="pull_api_data")
+    mapped_saved_files = ti.xcom_pull(task_ids="pull_api_data")
 
-    if not saved_files:
+    if not mapped_saved_files:
         print("No files to process.")
         return
+
+    saved_files: list[str] = []
+    for file_list in mapped_saved_files:
+        if isinstance(file_list, list):
+            saved_files.extend(file_list)
+
+    if not saved_files:
+        print("No files to process after flattening.")
+        return
+
+    print(f"Number of files to process: {len(saved_files)}")
 
     host = os.environ.get("DBT_HOST", "postgres")
     user = os.environ.get("DBT_USER")
@@ -58,30 +113,40 @@ def load_data_to_postgres(**context):
                     data = json.load(f)
 
                 parts = Path(file_path).stem.split("_")
+
+                print(f"File Parts: {parts}")
+
                 account_id = parts[1]
                 character_id = parts[2]
+                mode = int(parts[3])
                 page = int(parts[5])
 
                 cur.execute(
                     """
                     INSERT INTO bronze.raw_activity_history
-                    (account_id, character_id, page_number, payload)
-                    VALUES (%s, %s, %s, %s)
-                    ON CONFLICT (account_id, character_id, page_number)
+                    (account_id, character_id, activity_mode, page_number, payload)
+                    VALUES (%s, %s, %s, %s, %s)
+                    ON CONFLICT (account_id, character_id, activity_mode, page_number)
                     DO UPDATE SET
                         payload = EXCLUDED.payload,
                         ingested_at = CURRENT_TIMESTAMP
                     """,
-                    (account_id, character_id, page, json.dumps(data)),
+                    (account_id, character_id, mode, page, json.dumps(data)),
                 )
             conn.commit()
 
 
-pull_data_task = PythonOperator(
+build_roster_task = PythonOperator(
+    task_id="build_character_roster",
+    python_callable=build_character_roster,
+    dag=dag,
+)
+
+pull_data_task = PythonOperator.partial(
     task_id="pull_api_data",
     python_callable=pull_api_data,
     dag=dag,
-)
+).expand(op_kwargs=build_roster_task.output)
 
 load_data_task = PythonOperator(
     task_id="load_data_to_postgres",
@@ -89,15 +154,14 @@ load_data_task = PythonOperator(
     dag=dag,
 )
 
-run_dbt_silver_task = BashOperator(
-    task_id="run_dbt_silver",
+run_dbt_task = BashOperator(
+    task_id="run_dbt",
     bash_command=(
         "dbt run "
-        "--select slv_activity_history "
         "--project-dir /opt/airflow/dbt_transform "
         "--profiles-dir /opt/airflow/dbt_transform"
     ),
     dag=dag,
 )
 
-pull_data_task >> load_data_task >> run_dbt_silver_task
+build_roster_task >> pull_data_task >> load_data_task >> run_dbt_task

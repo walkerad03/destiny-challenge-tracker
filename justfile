@@ -1,6 +1,6 @@
 set windows-shell := ["powershell.exe", "-c"]
 
-deploy-prod:
+deploy:
     docker compose build
     docker compose up airflow-init --remove-orphans
     docker compose up -d

@@ -10,5 +10,8 @@ wheels/
 .venv
 .env
 
-# Airflow
+# Airflow and DBT
 airflow/logs/
+dbt_transform/logs/
+dbt_transform/target/
+dbt_transform/.user.yml
